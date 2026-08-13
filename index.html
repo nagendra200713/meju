@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happy Birthday</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #7b2ff7);
+}
+
+.container {
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 70px;
+}
+
+h1 {
+    
+    color: white;
+    font-size: 25px;
+    text-shadow: 0 0 15px #fff,
+                 0 0 30px #ff00cc;
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 25px;
+    animation: fade 2s infinite alternate;
+}
+h3 {
+    
+    color: white;
+    font-size: 25px;
+    text-shadow: 0 0 15px #fff,
+                 0 0 30px #ff00cc;
+    animation: glow 2s infinite alternate;
+}
+h4 {
+    margin-top: 15px;
+    color: #f7f4f4e7;
+    font-size: 25px;
+    animation: fade 2s infinite alternate;
+} 
+
+/* Cake */
+
+.cake {
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    animation: cakeBounce 2s infinite;
+}
+
+.candle {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    animation: candleGlow 1s infinite alternate;
+}
+
+/* Balloons */
+
+.balloon {
+    position: absolute;
+    font-size: 70px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.b1 {
+    left: 8%;
+    top: 20%;
+}
+
+.b2 {
+    right: 8%;
+    top: 25%;
+    animation-delay: 1s;
+}
+
+.b3 {
+    left: 20%;
+    bottom: 10%;
+    animation-delay: 2s;
+}
+
+.b4 {
+    right: 20%;
+    bottom: 12%;
+    animation-delay: 3s;
+}
+
+/* Message */
+
+.message {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    animation: messageGlow 2s infinite alternate;
+}
+
+/* Confetti */
+
+.confetti {
+    position: absolute;
+    font-size: 30px;
+    animation: fall 5s linear infinite;
+}
+
+.c1 {
+    left: 10%;
+    top: -10%;
+}
+
+.c2 {
+    left: 35%;
+    top: -20%;
+    animation-delay: 1s;
+}
+
+.c3 {
+    left: 60%;
+    top: -15%;
+    animation-delay: 2s;
+}
+
+.c4 {
+    left: 80%;
+    top: -20%;
+    animation-delay: 3s;
+}
+
+.c5 {
+    left: 50%;
+    top: -10%;
+    animation-delay: 4s;
+}
+
+/* Animations */
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px white;
+    }
+
+    to {
+        text-shadow: 0 0 30px #fff,
+                     0 0 50px #ff00cc;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -55%) scale(1.08);
+    }
+}
+
+@keyframes candleGlow {
+    from {
+        filter: drop-shadow(0 0 5px yellow);
+    }
+
+    to {
+        filter: drop-shadow(0 0 25px orange);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-50px) rotate(5deg);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes messageGlow {
+    from {
+        text-shadow: 0 0 5px rgb(226, 23, 23);
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff;
+    }
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 30px;
+    min-width: 180px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: bold;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.4),
+        0 0 25px rgba(255,100,200,0.4);
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+/* Hover */
+.btn:hover {
+    transform: translateY(-6px) scale(1.08);
+
+    background: rgba(202, 11, 11, 0.3);
+
+    box-shadow:
+        0 0 15px rgb(226, 15, 15),
+        0 0 35px #588d7bb9,
+        0 0 60px #8a2be2;
+
+    letter-spacing: 1px;
+}
+
+/* Click */
+.btn:active {
+    transform: scale(0.95);
+
+}
+/* Mobile Font Size */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+     h4 {
+        font-size: 16px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🎉 Happy Birthday Meju 🎉</h1>
+        <h2>✨ Have a Wonderful Day! ✨</h2>
+
+
+        
+        <!-- Balloons -->
+        <div class="balloon b1">🎈</div>
+        <div class="balloon b2">🎈</div>
+        <div class="balloon b3">🎈</div>
+        <div class="balloon b4">🎈</div>
+
+        <!-- Cake -->
+        <div class="cake">
+            <div class="candle">
+                🕯️
+            </div>
+
+            
+            <div class="cream"></div>
+            <div class="cake-body">🎂</div>
+            <h3>Make a Wish!</h3>
+            <h4>You are  my first female friend, and I'll always be a good friend to you.  </h4>
+        </div>
+        
+   
+
+        <!-- Message -->
+        <div class="message">
+            <a class="btn" href="page1.html">start suprise 🎂</a>
+        </div>
+
+
+        <!-- Confetti -->
+        <div class="confetti c1">✨</div>
+        <div class="confetti c2">🎊</div>
+        <div class="confetti c3">⭐</div>
+        <div class="confetti c4">🎉</div>
+        <div class="confetti c5">💖</div>
+
+    </div>
+    
+
+</body>
+</html>
