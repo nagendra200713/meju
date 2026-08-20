@@ -43,27 +43,37 @@
             color: white;
             font-size: clamp(22px, 5vw, 32px);
             line-height: 1.2;
+
             text-shadow:
                 0 0 15px #fff,
                 0 0 30px #ff00cc;
+
             animation: glow 2s infinite alternate;
         }
 
         h2 {
             margin-top: 12px;
+
             color: #fff;
+
             font-size: clamp(17px, 4vw, 25px);
+
             line-height: 1.3;
+
             animation: fade 2s infinite alternate;
         }
 
         h3 {
             color: white;
+
             font-size: clamp(18px, 4vw, 25px);
+
             margin-top: 5px;
+
             text-shadow:
                 0 0 15px #fff,
                 0 0 30px #ff00cc;
+
             animation: glow 2s infinite alternate;
         }
 
@@ -73,13 +83,9 @@
             position: absolute;
 
             left: 50%;
-            top: 48%;
+            top: 45%;
 
             transform: translate(-50%, -50%);
-
-            font-size: clamp(65px, 18vw, 100px);
-
-            animation: cakeBounce 2s infinite;
 
             width: 100%;
             max-width: 350px;
@@ -87,6 +93,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            font-size: clamp(65px, 18vw, 100px);
+
+            animation: cakeBounce 2s infinite;
         }
 
         .cake-body {
@@ -130,15 +140,17 @@
 
             font-family: Arial, sans-serif;
 
-            /* BOLD LETTER */
             font-size: clamp(13px, 3.5vw, 16px);
-            font-weight: 800;
+
+            /* EXTRA BOLD */
+            font-weight: 900;
 
             line-height: 1.5;
 
             text-align: center;
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
@@ -190,14 +202,15 @@
             animation-delay: 3s;
         }
 
-        /* ================= BOTTOM BUTTON ================= */
+        /* ================= START BUTTON ================= */
 
         .message {
             position: absolute;
 
-            bottom: 5%;
-
             left: 0;
+
+            /* Button மேலே கொண்டு வர */
+            bottom: 13%;
 
             width: 100%;
 
@@ -326,7 +339,6 @@
         /* ================= ANIMATIONS ================= */
 
         @keyframes glow {
-
             from {
                 text-shadow:
                     0 0 10px white;
@@ -340,7 +352,6 @@
         }
 
         @keyframes fade {
-
             from {
                 opacity: 0.5;
             }
@@ -351,7 +362,6 @@
         }
 
         @keyframes cakeBounce {
-
             0%,
             100% {
                 transform:
@@ -367,7 +377,6 @@
         }
 
         @keyframes candleGlow {
-
             from {
                 filter:
                     drop-shadow(0 0 5px yellow);
@@ -380,7 +389,6 @@
         }
 
         @keyframes float {
-
             0%,
             100% {
                 transform:
@@ -396,7 +404,6 @@
         }
 
         @keyframes fall {
-
             0% {
                 transform:
                     translateY(-100px)
@@ -415,7 +422,6 @@
         }
 
         @keyframes messageGlow {
-
             from {
                 text-shadow:
                     0 0 5px rgb(226, 23, 23);
@@ -428,7 +434,6 @@
         }
 
         @keyframes boxGlow {
-
             from {
                 box-shadow:
                     0 0 8px rgba(255, 255, 255, 0.3),
@@ -448,6 +453,7 @@
 
             .container {
                 min-height: 100vh;
+
                 padding-top: 45px;
             }
 
@@ -457,21 +463,25 @@
 
             h2 {
                 font-size: 17px;
+
                 margin-top: 10px;
             }
 
             h3 {
                 font-size: 18px;
+
                 margin-top: 5px;
             }
 
             .cake {
-                top: 46%;
+                top: 44%;
+
                 font-size: 72px;
             }
 
             .candle {
                 top: -40px;
+
                 font-size: 38px;
             }
 
@@ -484,6 +494,7 @@
 
                 font-size: 13px;
 
+                /* EXTRA BOLD */
                 font-weight: 900;
 
                 line-height: 1.45;
@@ -513,8 +524,10 @@
                 bottom: 18%;
             }
 
+            /* BUTTON POSITION */
+
             .message {
-                bottom: 4%;
+                bottom: 13%;
             }
 
             .btn {
@@ -549,12 +562,14 @@
             }
 
             .cake {
-                top: 45%;
+                top: 43%;
+
                 font-size: 65px;
             }
 
             .candle {
                 top: -35px;
+
                 font-size: 34px;
             }
 
@@ -576,12 +591,37 @@
                 font-size: 38px;
             }
 
+            .message {
+                bottom: 12%;
+            }
+
             .btn {
                 width: 195px;
 
                 min-height: 48px;
 
                 font-size: 15px;
+            }
+        }
+
+        /* ================= VERY SMALL HEIGHT ================= */
+
+        @media (max-height: 650px) and (max-width: 600px) {
+
+            .container {
+                padding-top: 25px;
+            }
+
+            .cake {
+                top: 42%;
+            }
+
+            .message {
+                bottom: 8%;
+            }
+
+            .btn {
+                min-height: 46px;
             }
         }
     </style>
