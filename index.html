@@ -30,18 +30,17 @@
         .container {
             width: 100%;
             height: 100vh;
-            min-height: 600px;
             position: relative;
             overflow: hidden;
             text-align: center;
-            padding: 55px 15px 20px;
+            padding-top: 50px;
         }
 
-        /* ================= HEADING ================= */
+        /* Heading */
 
         h1 {
             color: white;
-            font-size: clamp(22px, 5vw, 32px);
+            font-size: clamp(21px, 5vw, 32px);
             line-height: 1.2;
 
             text-shadow:
@@ -53,37 +52,31 @@
 
         h2 {
             margin-top: 12px;
-
-            color: #fff;
-
+            color: white;
             font-size: clamp(17px, 4vw, 25px);
-
-            line-height: 1.3;
 
             animation: fade 2s infinite alternate;
         }
 
         h3 {
             color: white;
-
-            font-size: clamp(18px, 4vw, 25px);
-
+            font-size: clamp(17px, 4vw, 24px);
             margin-top: 5px;
 
             text-shadow:
-                0 0 15px #fff,
+                0 0 15px white,
                 0 0 30px #ff00cc;
 
             animation: glow 2s infinite alternate;
         }
 
-        /* ================= CAKE ================= */
+        /* Cake Area */
 
         .cake {
             position: absolute;
 
             left: 50%;
-            top: 45%;
+            top: 48%;
 
             transform: translate(-50%, -50%);
 
@@ -94,19 +87,20 @@
             flex-direction: column;
             align-items: center;
 
-            font-size: clamp(65px, 18vw, 100px);
-
             animation: cakeBounce 2s infinite;
         }
 
         .cake-body {
+            font-size: clamp(65px, 18vw, 100px);
             line-height: 1;
         }
+
+        /* Candle */
 
         .candle {
             position: absolute;
 
-            top: -42px;
+            top: -45px;
             left: 50%;
 
             transform: translateX(-50%);
@@ -116,7 +110,7 @@
             animation: candleGlow 1s infinite alternate;
         }
 
-        /* ================= MESSAGE BOX ================= */
+        /* Message Box */
 
         .box {
             width: min(280px, 85vw);
@@ -140,9 +134,9 @@
 
             font-family: Arial, sans-serif;
 
-            font-size: clamp(13px, 3.5vw, 16px);
+            font-size: 14px;
 
-            /* EXTRA BOLD */
+            /* BOLD */
             font-weight: 900;
 
             line-height: 1.5;
@@ -150,9 +144,8 @@
             text-align: center;
 
             display: flex;
-
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
             text-shadow:
                 0 1px 3px rgba(0, 0, 0, 0.7);
@@ -164,7 +157,80 @@
             animation: boxGlow 2s infinite alternate;
         }
 
-        /* ================= BALLOONS ================= */
+        /* Start Surprise */
+
+        .message {
+            margin-top: 18px;
+
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            animation: messageGlow 2s infinite alternate;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: min(220px, 80vw);
+
+            min-height: 50px;
+
+            padding: 12px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #ff1493,
+                #8a2be2
+            );
+
+            color: white;
+
+            text-decoration: none;
+
+            border: 2px solid rgba(255, 255, 255, 0.85);
+
+            border-radius: 50px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 0 10px #ff1493,
+                0 0 25px #8a2be2;
+
+            cursor: pointer;
+
+            transition: 0.4s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.06);
+
+            background: linear-gradient(
+                135deg,
+                #8a2be2,
+                #ff1493
+            );
+
+            box-shadow:
+                0 0 15px white,
+                0 0 30px #ff1493,
+                0 0 50px #8a2be2;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Balloons */
 
         .balloon {
             position: absolute;
@@ -184,114 +250,22 @@
         .b2 {
             right: 5%;
             top: 23%;
-
             animation-delay: 1s;
         }
 
         .b3 {
-            left: 10%;
-            bottom: 15%;
-
+            left: 8%;
+            bottom: 12%;
             animation-delay: 2s;
         }
 
         .b4 {
-            right: 10%;
-            bottom: 15%;
-
+            right: 8%;
+            bottom: 12%;
             animation-delay: 3s;
         }
 
-        /* ================= START BUTTON ================= */
-
-        .message {
-            position: absolute;
-
-            left: 0;
-
-            /* Button மேலே கொண்டு வர */
-            bottom: 13%;
-
-            width: 100%;
-
-            padding: 0 15px;
-
-            color: white;
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            animation: messageGlow 2s infinite alternate;
-
-            z-index: 10;
-        }
-
-        .btn {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            width: min(220px, 80vw);
-
-            min-height: 52px;
-
-            padding: 12px 20px;
-
-            background: linear-gradient(
-                135deg,
-                #ff1493,
-                #8a2be2
-            );
-
-            color: white;
-
-            text-decoration: none;
-
-            border: 2px solid rgba(255, 255, 255, 0.8);
-
-            border-radius: 50px;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 17px;
-
-            font-weight: 800;
-
-            letter-spacing: 0.3px;
-
-            box-shadow:
-                0 0 10px #ff1493,
-                0 0 25px #8a2be2;
-
-            cursor: pointer;
-
-            transition: all 0.4s ease;
-
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-
-            background: linear-gradient(
-                135deg,
-                #8a2be2,
-                #ff1493
-            );
-
-            box-shadow:
-                0 0 15px #fff,
-                0 0 30px #ff1493,
-                0 0 50px #8a2be2;
-        }
-
-        .btn:active {
-            transform: scale(0.95);
-        }
-
-        /* ================= CONFETTI ================= */
+        /* Confetti */
 
         .confetti {
             position: absolute;
@@ -311,42 +285,37 @@
         .c2 {
             left: 35%;
             top: -20%;
-
             animation-delay: 1s;
         }
 
         .c3 {
             left: 60%;
             top: -15%;
-
             animation-delay: 2s;
         }
 
         .c4 {
             left: 80%;
             top: -20%;
-
             animation-delay: 3s;
         }
 
         .c5 {
             left: 50%;
             top: -10%;
-
             animation-delay: 4s;
         }
 
-        /* ================= ANIMATIONS ================= */
+        /* Animations */
 
         @keyframes glow {
             from {
-                text-shadow:
-                    0 0 10px white;
+                text-shadow: 0 0 10px white;
             }
 
             to {
                 text-shadow:
-                    0 0 30px #fff,
+                    0 0 30px white,
                     0 0 50px #ff00cc;
             }
         }
@@ -371,8 +340,8 @@
 
             50% {
                 transform:
-                    translate(-50%, -55%)
-                    scale(1.08);
+                    translate(-50%, -53%)
+                    scale(1.05);
             }
         }
 
@@ -423,13 +392,11 @@
 
         @keyframes messageGlow {
             from {
-                text-shadow:
-                    0 0 5px rgb(226, 23, 23);
+                text-shadow: 0 0 5px red;
             }
 
             to {
-                text-shadow:
-                    0 0 20px #fff;
+                text-shadow: 0 0 20px white;
             }
         }
 
@@ -447,14 +414,12 @@
             }
         }
 
-        /* ================= MOBILE ================= */
+        /* Mobile */
 
         @media (max-width: 600px) {
 
             .container {
-                min-height: 100vh;
-
-                padding-top: 45px;
+                padding-top: 42px;
             }
 
             h1 {
@@ -463,26 +428,24 @@
 
             h2 {
                 font-size: 17px;
-
-                margin-top: 10px;
-            }
-
-            h3 {
-                font-size: 18px;
-
-                margin-top: 5px;
+                margin-top: 9px;
             }
 
             .cake {
-                top: 44%;
+                top: 46%;
+            }
 
+            .cake-body {
                 font-size: 72px;
             }
 
             .candle {
-                top: -40px;
-
+                top: -38px;
                 font-size: 38px;
+            }
+
+            h3 {
+                font-size: 18px;
             }
 
             .box {
@@ -494,10 +457,25 @@
 
                 font-size: 13px;
 
-                /* EXTRA BOLD */
                 font-weight: 900;
 
                 line-height: 1.45;
+            }
+
+            /* Button directly below box */
+
+            .message {
+                margin-top: 16px;
+            }
+
+            .btn {
+                width: 210px;
+
+                min-height: 50px;
+
+                font-size: 16px;
+
+                padding: 12px 18px;
             }
 
             .balloon {
@@ -515,29 +493,13 @@
             }
 
             .b3 {
-                left: 4%;
-                bottom: 18%;
+                left: 3%;
+                bottom: 10%;
             }
 
             .b4 {
-                right: 4%;
-                bottom: 18%;
-            }
-
-            /* BUTTON POSITION */
-
-            .message {
-                bottom: 13%;
-            }
-
-            .btn {
-                width: 210px;
-
-                min-height: 50px;
-
-                font-size: 16px;
-
-                padding: 12px 18px;
+                right: 3%;
+                bottom: 10%;
             }
 
             .confetti {
@@ -545,12 +507,12 @@
             }
         }
 
-        /* ================= SMALL MOBILE ================= */
+        /* Small Mobile */
 
         @media (max-width: 380px) {
 
             .container {
-                padding-top: 35px;
+                padding-top: 32px;
             }
 
             h1 {
@@ -562,14 +524,15 @@
             }
 
             .cake {
-                top: 43%;
+                top: 45%;
+            }
 
+            .cake-body {
                 font-size: 65px;
             }
 
             .candle {
                 top: -35px;
-
                 font-size: 34px;
             }
 
@@ -587,12 +550,8 @@
                 padding: 9px;
             }
 
-            .balloon {
-                font-size: 38px;
-            }
-
             .message {
-                bottom: 12%;
+                margin-top: 14px;
             }
 
             .btn {
@@ -602,26 +561,9 @@
 
                 font-size: 15px;
             }
-        }
 
-        /* ================= VERY SMALL HEIGHT ================= */
-
-        @media (max-height: 650px) and (max-width: 600px) {
-
-            .container {
-                padding-top: 25px;
-            }
-
-            .cake {
-                top: 42%;
-            }
-
-            .message {
-                bottom: 8%;
-            }
-
-            .btn {
-                min-height: 46px;
+            .balloon {
+                font-size: 38px;
             }
         }
     </style>
@@ -665,23 +607,21 @@
                 Make a Wish!
             </h3>
 
-
             <!-- Message Box -->
 
             <div class="box">
                 You are my first female friend, and I'll always be a good friend to you.
             </div>
 
-        </div>
+            <!-- Start Surprise Button -->
 
+            <div class="message">
 
-        <!-- Start Button -->
+                <a class="btn" href="page1.html">
+                    Start Surprise 🎂
+                </a>
 
-        <div class="message">
-
-            <a class="btn" href="page1.html">
-                Start Surprise 🎂
-            </a>
+            </div>
 
         </div>
 
