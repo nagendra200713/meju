@@ -1,19 +1,705 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='16' x='4' y='3' rx='2'/><path d='M4 11h16'/><path d='M12 3v8'/><path d='m8 19-2 3'/><path d='m18 22-2-3'/><circle cx='8' cy='15' r='1'/><circle cx='16' cy='15' r='1'/></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RailYatri Pro - Complete Train Booking, Live Tracking, Seat Reservation, E-Ticket Printing and Railway Admin Portal" />
-    <title>RailYatri Pro | Railway Reservation & Management Portal</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" crossorigin src="..."></script>
-<link rel="stylesheet" crossorigin href="...">
-  </body>
+
+<head>
+    <title>Happy Birthday</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #7b2ff7);
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 55px 15px 20px;
+        }
+
+        /* ================= HEADING ================= */
+
+        h1 {
+            color: white;
+            font-size: clamp(22px, 5vw, 32px);
+            line-height: 1.2;
+
+            text-shadow:
+                0 0 15px #fff,
+                0 0 30px #ff00cc;
+
+            animation: glow 2s infinite alternate;
+        }
+
+        h2 {
+            margin-top: 12px;
+
+            color: #fff;
+
+            font-size: clamp(17px, 4vw, 25px);
+
+            line-height: 1.3;
+
+            animation: fade 2s infinite alternate;
+        }
+
+        h3 {
+            color: white;
+
+            font-size: clamp(18px, 4vw, 25px);
+
+            margin-top: 5px;
+
+            text-shadow:
+                0 0 15px #fff,
+                0 0 30px #ff00cc;
+
+            animation: glow 2s infinite alternate;
+        }
+
+        /* ================= CAKE ================= */
+
+        .cake {
+            position: absolute;
+
+            left: 50%;
+            top: 45%;
+
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            max-width: 350px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            font-size: clamp(65px, 18vw, 100px);
+
+            animation: cakeBounce 2s infinite;
+        }
+
+        .cake-body {
+            line-height: 1;
+        }
+
+        .candle {
+            position: absolute;
+
+            top: -42px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: clamp(35px, 10vw, 50px);
+
+            animation: candleGlow 1s infinite alternate;
+        }
+
+        /* ================= MESSAGE BOX ================= */
+
+        .box {
+            width: min(280px, 85vw);
+
+            min-height: 75px;
+
+            margin-top: 10px;
+
+            padding: 12px 15px;
+
+            border: 2px solid rgba(255, 255, 255, 0.85);
+
+            border-radius: 15px;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            font-size: clamp(13px, 3.5vw, 16px);
+
+            /* EXTRA BOLD */
+            font-weight: 900;
+
+            line-height: 1.5;
+
+            text-align: center;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            text-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.7);
+
+            box-shadow:
+                0 0 10px rgba(255, 255, 255, 0.4),
+                0 0 25px rgba(255, 100, 200, 0.5);
+
+            animation: boxGlow 2s infinite alternate;
+        }
+
+        /* ================= BALLOONS ================= */
+
+        .balloon {
+            position: absolute;
+
+            font-size: clamp(40px, 12vw, 70px);
+
+            animation: float 4s ease-in-out infinite;
+
+            z-index: 1;
+        }
+
+        .b1 {
+            left: 5%;
+            top: 20%;
+        }
+
+        .b2 {
+            right: 5%;
+            top: 23%;
+
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            left: 10%;
+            bottom: 15%;
+
+            animation-delay: 2s;
+        }
+
+        .b4 {
+            right: 10%;
+            bottom: 15%;
+
+            animation-delay: 3s;
+        }
+
+        /* ================= START BUTTON ================= */
+
+        .message {
+            position: absolute;
+
+            left: 0;
+
+            /* Button மேலே கொண்டு வர */
+            bottom: 13%;
+
+            width: 100%;
+
+            padding: 0 15px;
+
+            color: white;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            animation: messageGlow 2s infinite alternate;
+
+            z-index: 10;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: min(220px, 80vw);
+
+            min-height: 52px;
+
+            padding: 12px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #ff1493,
+                #8a2be2
+            );
+
+            color: white;
+
+            text-decoration: none;
+
+            border: 2px solid rgba(255, 255, 255, 0.8);
+
+            border-radius: 50px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.3px;
+
+            box-shadow:
+                0 0 10px #ff1493,
+                0 0 25px #8a2be2;
+
+            cursor: pointer;
+
+            transition: all 0.4s ease;
+
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                #8a2be2,
+                #ff1493
+            );
+
+            box-shadow:
+                0 0 15px #fff,
+                0 0 30px #ff1493,
+                0 0 50px #8a2be2;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ================= CONFETTI ================= */
+
+        .confetti {
+            position: absolute;
+
+            font-size: clamp(20px, 7vw, 30px);
+
+            animation: fall 5s linear infinite;
+
+            z-index: 2;
+        }
+
+        .c1 {
+            left: 10%;
+            top: -10%;
+        }
+
+        .c2 {
+            left: 35%;
+            top: -20%;
+
+            animation-delay: 1s;
+        }
+
+        .c3 {
+            left: 60%;
+            top: -15%;
+
+            animation-delay: 2s;
+        }
+
+        .c4 {
+            left: 80%;
+            top: -20%;
+
+            animation-delay: 3s;
+        }
+
+        .c5 {
+            left: 50%;
+            top: -10%;
+
+            animation-delay: 4s;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 10px white;
+            }
+
+            to {
+                text-shadow:
+                    0 0 30px #fff,
+                    0 0 50px #ff00cc;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.5;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes cakeBounce {
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(-50%, -55%)
+                    scale(1.08);
+            }
+        }
+
+        @keyframes candleGlow {
+            from {
+                filter:
+                    drop-shadow(0 0 5px yellow);
+            }
+
+            to {
+                filter:
+                    drop-shadow(0 0 25px orange);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-35px)
+                    rotate(5deg);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                transform:
+                    translateY(-100px)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(100vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+        @keyframes messageGlow {
+            from {
+                text-shadow:
+                    0 0 5px rgb(226, 23, 23);
+            }
+
+            to {
+                text-shadow:
+                    0 0 20px #fff;
+            }
+        }
+
+        @keyframes boxGlow {
+            from {
+                box-shadow:
+                    0 0 8px rgba(255, 255, 255, 0.3),
+                    0 0 15px rgba(255, 100, 200, 0.3);
+            }
+
+            to {
+                box-shadow:
+                    0 0 15px rgba(255, 255, 255, 0.7),
+                    0 0 30px rgba(255, 100, 200, 0.7);
+            }
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+                min-height: 100vh;
+
+                padding-top: 45px;
+            }
+
+            h1 {
+                font-size: 21px;
+            }
+
+            h2 {
+                font-size: 17px;
+
+                margin-top: 10px;
+            }
+
+            h3 {
+                font-size: 18px;
+
+                margin-top: 5px;
+            }
+
+            .cake {
+                top: 44%;
+
+                font-size: 72px;
+            }
+
+            .candle {
+                top: -40px;
+
+                font-size: 38px;
+            }
+
+            .box {
+                width: 240px;
+
+                min-height: 78px;
+
+                padding: 11px;
+
+                font-size: 13px;
+
+                /* EXTRA BOLD */
+                font-weight: 900;
+
+                line-height: 1.45;
+            }
+
+            .balloon {
+                font-size: 45px;
+            }
+
+            .b1 {
+                left: 2%;
+                top: 19%;
+            }
+
+            .b2 {
+                right: 2%;
+                top: 22%;
+            }
+
+            .b3 {
+                left: 4%;
+                bottom: 18%;
+            }
+
+            .b4 {
+                right: 4%;
+                bottom: 18%;
+            }
+
+            /* BUTTON POSITION */
+
+            .message {
+                bottom: 13%;
+            }
+
+            .btn {
+                width: 210px;
+
+                min-height: 50px;
+
+                font-size: 16px;
+
+                padding: 12px 18px;
+            }
+
+            .confetti {
+                font-size: 22px;
+            }
+        }
+
+        /* ================= SMALL MOBILE ================= */
+
+        @media (max-width: 380px) {
+
+            .container {
+                padding-top: 35px;
+            }
+
+            h1 {
+                font-size: 19px;
+            }
+
+            h2 {
+                font-size: 15px;
+            }
+
+            .cake {
+                top: 43%;
+
+                font-size: 65px;
+            }
+
+            .candle {
+                top: -35px;
+
+                font-size: 34px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .box {
+                width: 220px;
+
+                min-height: 72px;
+
+                font-size: 12px;
+
+                padding: 9px;
+            }
+
+            .balloon {
+                font-size: 38px;
+            }
+
+            .message {
+                bottom: 12%;
+            }
+
+            .btn {
+                width: 195px;
+
+                min-height: 48px;
+
+                font-size: 15px;
+            }
+        }
+
+        /* ================= VERY SMALL HEIGHT ================= */
+
+        @media (max-height: 650px) and (max-width: 600px) {
+
+            .container {
+                padding-top: 25px;
+            }
+
+            .cake {
+                top: 42%;
+            }
+
+            .message {
+                bottom: 8%;
+            }
+
+            .btn {
+                min-height: 46px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <h1>🎉 Happy Birthday Meju 🎉</h1>
+
+        <h2>✨ Have a Wonderful Day! ✨</h2>
+
+
+        <!-- Balloons -->
+
+        <div class="balloon b1">🎈</div>
+
+        <div class="balloon b2">🎈</div>
+
+        <div class="balloon b3">🎈</div>
+
+        <div class="balloon b4">🎈</div>
+
+
+        <!-- Cake -->
+
+        <div class="cake">
+
+            <div class="candle">
+                🕯️
+            </div>
+
+            <div class="cake-body">
+                🎂
+            </div>
+
+            <h3>
+                Make a Wish!
+            </h3>
+
+
+            <!-- Message Box -->
+
+            <div class="box">
+                You are my first female friend, and I'll always be a good friend to you.
+            </div>
+
+        </div>
+
+
+        <!-- Start Button -->
+
+        <div class="message">
+
+            <a class="btn" href="page1.html">
+                Start Surprise 🎂
+            </a>
+
+        </div>
+
+
+        <!-- Confetti -->
+
+        <div class="confetti c1">✨</div>
+
+        <div class="confetti c2">🎊</div>
+
+        <div class="confetti c3">⭐</div>
+
+        <div class="confetti c4">🎉</div>
+
+        <div class="confetti c5">💖</div>
+
+    </div>
+
+</body>
+
 </html>
